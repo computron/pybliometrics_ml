@@ -18,7 +18,7 @@ if __name__ == "__main__":
         x = ScopusSearch(
             f'ABS ( "data mining" ) OR ABS ( "machine learning" ) OR TITLE ( "data mining" ) OR TITLE ( "machine learning" ) AND TITLE ( "material" ) OR ABS ( "material" ) OR SRCTITLE ( "material" ) AND SUBJAREA ( mate ) AND DOCTYPE ( "AR" ) AND SRCTYPE( j ) AND PUBYEAR = {year} AND NOT SUBJAREA (medi ) AND NOT SUBJAREA ( immu ) AND NOT SUBJAREA ( BIOC ) AND NOT SUBJAREA ( busi )',
             view="STANDARD")
-        print(len(x.results))
+        print(f"Year: {year} , Results count: {len(x.results)}")
 
         # store the results and add the ref_docs key to store each reference
         for doc in tqdm(x.results):
@@ -46,5 +46,6 @@ if __name__ == "__main__":
 
             # we're not going to try too hard to fix any of the rare errors
             except Exception as e:
-                print(f"An error occurred: {e}")
-                traceback.print_exc()
+                pass
+                # print(f"An error occurred: {e}")
+                # traceback.print_exc()
