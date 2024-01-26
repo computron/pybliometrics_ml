@@ -10,7 +10,7 @@ if __name__ == "__main__":
     for year in range(2013, 2024):
         # make the folder to store the data for the year
         current_path = os.getcwd()
-        folder_path = os.path.join(current_path, str(year))
+        folder_path = os.path.join(current_path, "output", str(year))
         if not os.path.exists(folder_path):
             os.makedirs(folder_path)
 
