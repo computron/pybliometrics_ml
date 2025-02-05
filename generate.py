@@ -7,6 +7,11 @@ from tqdm import tqdm
 # NOTE: config file for pybliometrics is stored in $HOME/.config/pybliometrics.cfg
 
 if __name__ == "__main__":
+    # initialize pybliometrics
+    import pybliometrics
+    pybliometrics.scopus.init()
+
+    # begin script
     for year in range(2013, 2024):
         # make the folder to store the data for the year
         current_path = os.getcwd()
